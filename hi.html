@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Pop-up</title>
+    <style>
+        .bubble {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #007bff;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .bubble iframe {
+            display: none;
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 400px;
+            height: 600px;
+            border: none;
+            z-index: 1001;
+        }
+
+        .bubble.active iframe {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="bubble" id="bubble">
+        <iframe src="http://localhost:8501/"></iframe>
+    </div>
+
+    <script>
+        document.getElementById('bubble').addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
